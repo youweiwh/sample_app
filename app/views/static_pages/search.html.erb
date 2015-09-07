@@ -1,8 +1,7 @@
-<% provide(:title, 'Home') %>
+<% provide(:title, 'Search') %>
 <% if signed_in? %>
 	<div class="row">
 		<aside class="col-xs-4">
-			<h3>User</h3>
 			<section>
 				<%= render 'shared/user_info' %>
 			</section>
@@ -10,11 +9,11 @@
         <%= render 'shared/stats' %>
       </section>
 			<section>
-				<%= render 'shared/micropost_form' %>
+				<%= render 'shared/search_form' %>
 			</section>
 		</aside>
 		<div class="col-xs-8">
-      <h3>Micropost Feed</h3>
+      <h3>Micropost Found</h3>
       <%= render 'shared/feed' %>
     </div>
 	</div>

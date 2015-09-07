@@ -16,4 +16,11 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
+  def search
+    if signed_in?
+      @micropost  = current_user.microposts.build
+      @feed_items = []
+    end
+  end
+
 end
