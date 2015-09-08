@@ -11,7 +11,6 @@ class MicropostsController < ApplicationController
 
 			@microposts = @search.results
 			@count = @search.total
-			binding.pry
 		else
 			@microposts = [] # Micropost.paginate(page: params[:page])
 			@count = @microposts.count
