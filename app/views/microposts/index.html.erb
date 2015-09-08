@@ -11,7 +11,7 @@
 	</aside>
 
 	<div class="col-xs-8">
-		<ul class="microposts">
+		<ul class="microposts" id="result">
 			<% if @microposts.present? %>
 			<h3><%= pluralize(@count, "micropost") %> found</h3>
 			<%= will_paginate %>
@@ -24,4 +24,8 @@
 	</div>
 </div>
 
-
+<script type="text/javascript">
+	document.getElementById("result").onclick = function() {
+		searchHighlight("result", "search");
+	};
+</script>

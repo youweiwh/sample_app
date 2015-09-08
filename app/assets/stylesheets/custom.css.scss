@@ -1,6 +1,7 @@
 @import "bootstrap";
 
 /* mixins, variables, etc. */
+
 $gray-medium-light: #eaeaea;
 $blue: #049cdb;
 
@@ -243,4 +244,10 @@ aside {
 		height: 100px;
 		margin-bottom: 5px;
 	}
+}
+
+/* highlight */
+.highlight {
+	font-weight: bold;
+	color: red;
 }
