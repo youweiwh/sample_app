@@ -1,31 +1,33 @@
 <% provide(:title, 'Search microposts') %>
-
 <h1>Search microposts</h1>
-
 <div class="row">
-	<aside class="col-xs-4">
-		<h3>Content:</h3>
-		<section>
-		<%= render 'search_form' %>
-		</section>
-	</aside>
-
-	<div class="col-xs-8">
-		<ul class="microposts" id="result">
-			<% if @microposts.present? %>
-			<h3><%= pluralize(@count, "micropost") %> found</h3>
-			<%= will_paginate %>
-			<%= render @microposts, size: 52 %>
-			<%= will_paginate %>
-			<% else %>
-			<h3>No microposts containing words <%= params[:search] %></h3>
-			<% end %>
-		</ul>
-	</div>
+  <aside class="col-xs-4">
+    <h3>Content:</h3>
+    <section>
+      <%= render 'search_form' %>
+    </section>
+  </aside>
+  <div class="col-xs-8">
+    <ul class="microposts" id="result">
+      <% if @microposts.present? %>
+        <h3><%= pluralize(@count, "micropost") %> found</h3>
+        <%= will_paginate %>
+        <%= render @microposts, size: 52 %>
+        <%= will_paginate %>
+      <% else %>
+        <h3>No microposts containing words <%= params[:search] %></h3>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 <script type="text/javascript">
-	document.getElementById("result").onclick = function() {
-		searchHighlight("result", "search");
-	};
+  document.getElementById("result").onclick = function() {
+      // searchHighlight("result", "search");
+      setTimeout("highlight('search')", 200);
+    };
+    window.onload = function() {
+      // searchHighlight("result", "search");
+      highlight("search");
+    }
 </script>
